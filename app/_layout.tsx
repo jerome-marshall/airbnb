@@ -3,7 +3,7 @@ import { useFonts } from "expo-font"
 import { Stack, useRouter } from "expo-router"
 import * as SplashScreen from "expo-splash-screen"
 import { useEffect } from "react"
-import { TouchableOpacity } from "react-native"
+import { SafeAreaView, TouchableOpacity } from "react-native"
 import * as SecureStore from "expo-secure-store"
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo"
 
