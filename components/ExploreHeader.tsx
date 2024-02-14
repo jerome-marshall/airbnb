@@ -67,13 +67,17 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
 
     const selected = itemsRef.current[index]
 
-    selected?.measure((x, y) => {
-      scrollRef.current?.scrollTo({
-        x: x - 16,
-        y: 0,
-        animated: true,
-      })
-    })
+    selected?.measureLayout(
+      scrollRef?.current?.getScrollableNode(),
+      (x, y) => {
+        scrollRef.current?.scrollTo({
+          x: x - 16,
+          y: 0,
+          animated: true,
+        })
+      },
+      () => console.error("measureLayout failed")
+    )
 
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
     onCategoryChanged(categories[index].name)
