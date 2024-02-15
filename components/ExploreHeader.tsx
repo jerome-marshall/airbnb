@@ -79,7 +79,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
       () => console.error("measureLayout failed")
     )
 
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
+    // Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
     onCategoryChanged(categories[index].name)
   }
 

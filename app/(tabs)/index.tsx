@@ -4,11 +4,12 @@ import { Link, Stack } from "expo-router"
 import ExploreHeader from "@/components/ExploreHeader"
 import Listings from "@/components/Listings"
 import listingData from "@/assets/data/airbnb-listings.json"
+import { IListing } from "@/types"
 
 const Page = () => {
   const [category, setCategory] = React.useState("Tiny homes")
 
-  const items = useMemo(() => listingData as any, [])
+  const items = useMemo(() => listingData as IListing[], [])
 
   const onDateChanged = (category: string) => {
     setCategory(category)
