@@ -58,7 +58,7 @@ const RenderRow: ListRenderItem<IListing> = ({ item }) => {
       <TouchableOpacity>
         <Animated.View
           style={styles.listing}
-          entering={FadeInRight}
+          entering={FadeInRight.springify()}
           exiting={FadeOutLeft}
         >
           <Image source={{ uri: medium_url! }} style={styles.image} />
